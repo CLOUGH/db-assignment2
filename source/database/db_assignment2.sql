@@ -24,7 +24,7 @@ CREATE TABLE comment(
 	PRIMARY KEY (comment_id)
 );
 
-CREATE TABLE group(
+CREATE TABLE user_group(
 	group_id INT NOT NULL,
 	group_name VARCHAR(255),
 
@@ -66,7 +66,7 @@ CREATE TABLE creates(
 	date_created DATE,
 
 	PRIMARY KEY (post_id),
-	FOREIGN KEY (post_id) REFERENCES post(post_id) ON DELETE CASCADE
+	FOREIGN KEY (post_id) REFERENCES post(post_id) ON DELETE CASCADE,
 	FOREIGN KEY (user_id) REFERENCES user(user_id) ON DELETE CASCADE
 );
 
@@ -76,11 +76,9 @@ CREATE TABLE comments_on(
 	comment_id INT NOT NULL,
 	date_commented DATE,
 
-	PRIMARY KEY (post_id),
-	PRIMARY KEY (user_id),
-	PRIMARY KEY (comment_id),
-	FOREIGN KEY (post_id) REFERENCES post(post_id) ON DELETE CASCADE
-	FOREIGN KEY (user_id) REFERENCES user(user_id) ON DELETE CASCADE
+	PRIMARY KEY (post_id,user_id, comment_id),
+	FOREIGN KEY (post_id) REFERENCES post(post_id) ON DELETE CASCADE,
+	FOREIGN KEY (user_id) REFERENCES user(user_id) ON DELETE CASCADE,
 	FOREIGN KEY (comment_id) REFERENCES comment(comment_id) ON DELETE CASCADE
 );
 
@@ -89,10 +87,46 @@ CREATE TABLE friend_of(
 	friend INT NOT NULL, 
 	type VARCHAR(255),
 
-	PRIMARY KEY(friend_owner),
-	PRIMARY KEY (friend)
+	PRIMARY KEY(friend_owner,friend)
 );
 
 CREATE TABLE add_editors(
-	group_owner INT  
+	group_owner INT NOT NULL,
+	user_added  INT NOT NULL,
+	date_added DATE,
+
+	PRIMARY KEY (group_owner,user_added),
+	FOREIGN KEY (group_owner) REFERENCES user(user_id) ON DELETE CASCADE,
+	FOREIGN KEY (user_added) REFERENCES user(user_id)
+);
+
+CREATE TABLE add_to_group(
+	user_id INT NOT NULL,
+	group_id INT NOT NULL,
+	date_added DATE,
+
+	PRIMARY KEY (user_id, group_id),
+	FOREIGN KEY (user_id) REFERENCES user(user_id) ON DELETE CASCADE,
+	FOREIGN KEY (group_id) REFERENCES user_group(group_id) ON DELETE	CASCADE
+);
+
+CREATE TABLE create_group(
+	group_id INT NOT NULL,
+	user_id INT NOT NULL,
+	date_created DATE,
+
+	PRIMARY KEY (group_id),
+	FOREIGN KEY (user_id) REFERENCES user(user_id)
+);
+
+CREATE TABLE create_content(
+	user_id INT NOT NULL,
+	group_id INT NOT NULL,
+	gpost_id INT NOT NULL,
+	date_created DATE,
+
+	PRIMARY KEY (user_id,group_id,gpost_id),
+	FOREIGN KEY (user_id) REFERENCES user(user_id),
+	FOREIGN KEY (group_id) REFERENCES user_group(group_id),
+	FOREIGN KEY (gpost_id) REFERENCES group_post(gpost_id)
 );
