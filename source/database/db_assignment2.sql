@@ -5,9 +5,10 @@ CREATE TABLE user(
 	user_id INT NOT NULL,
 	status VARCHAR (255),
 	password VARCHAR(255),
-	reg_id VARCHAR(255),
+	email VARCHAR(255) NOT NULL,
 
-	PRIMARY KEY (user_id)
+	PRIMARY KEY (user_id),
+	UNIQUE (email)
 );
 CREATE TABLE post(
 	post_id INT NOT NULL,
@@ -49,7 +50,6 @@ CREATE TABLE profile(
 	user_id INT NOT NULL,
 	fname VARCHAR(255),
 	lname VARCHAR(255),
-	email VARCHAR(255),
 	dob DATE,
 	profile_pic VARCHAR (255),
 
@@ -130,3 +130,24 @@ CREATE TABLE create_content(
 	FOREIGN KEY (group_id) REFERENCES user_group(group_id),
 	FOREIGN KEY (gpost_id) REFERENCES group_post(gpost_id)
 );
+
+/*
+TABLE ALTERATIONS
+*/
+
+/*
+STORED PROCEDURES
+*/
+DELIMITER $$
+CREATE PROCEDURE `lookUpUser`(IN `userEmailVar` VARCHAR(255))
+BEGIN
+	SELECT * FROM `user` WHERE `user`.`email`=`userEmailVar`;
+END $$
+DELIMITER;
+
+DELIMITER $$
+CREATE PROCEDURE `registerUser`(IN `user_email` VARCHAR(255), IN `user_fname` VARCHAR(255), IN `user_lname`, IN `user_password`)
+BEGIN
+	INSERT INTO user('status','password','email') VALUES('active', `user_password`,`user_email`);
+END $$
+DELIMITER;
