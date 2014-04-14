@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<?php
-include './header/header.php' 
-?>
-=======
 <html>
 <head>
 	<title>Home</title>
@@ -28,7 +23,7 @@ include './header/header.php'
 				echo "Test";
 			}
 		?>
->>>>>>> a8bf0256a546f175d0f6ede44622f211e64e25b5
+
 		<div class="front-page">
 			<div class="ui grid">
 				<div class="eight wide column">
