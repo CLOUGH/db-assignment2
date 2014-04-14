@@ -9,9 +9,9 @@ $mysqli = new mysqli('localhost', 'root', '', 'db_assignment2');
 if($mysqli->connect_errno > 0)
 	die('Unable to connect to the database ['.$mysqli->connect_error.']');
 
-$resultSet = $mysqli->query("CALL lookUpUser ($user_email)");
-$results  = myqli_fetch_array($resultSet);
-
+$resultSet = $mysqli->query("CALL lookUpUser ('$user_email')");
+$results  = mysqli_fetch_array($resultSet);
+var_dump($results);
 
 if(count($results)!=0)
 {
