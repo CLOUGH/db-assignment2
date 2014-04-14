@@ -144,10 +144,15 @@ BEGIN
 	SELECT * FROM `user` WHERE `user`.`email`=`userEmailVar`;
 END $$
 DELIMITER;
-
+/*
 DELIMITER $$
-CREATE PROCEDURE `registerUser`(IN `user_email` VARCHAR(255), IN `user_fname` VARCHAR(255), IN `user_lname`, IN `user_password`)
+CREATE PROCEDURE `registerUser`(IN `user_email` VARCHAR(255), IN `user_lname`, IN `user_password`, IN `user_fname` VARCHAR(255))
 BEGIN
-	INSERT INTO user('status','password','email') VALUES('active', `user_password`,`user_email`);
+	INSERT INTO user(status,password,email) VALUES ('active',`user_password`,`user_email`);
+	SELECT @current_user_id := user_id FROM user
+	INSERT INTO profile(user_id, fname,lname) VALUES(current_user_id,user_lname,user_fname)
+
 END $$
 DELIMITER;
+*/
+
