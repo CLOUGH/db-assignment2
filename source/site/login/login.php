@@ -16,7 +16,7 @@ if(count($results)!=0)
 	if($results['password']==$user_password)
 	{
 		$_SESSION['user'] = $results['user_id'];
-		header("location:".APP_ROOT.'/profile/index.php');
+		header("location:../profile/index.php");
 	}
 	else
 	{
