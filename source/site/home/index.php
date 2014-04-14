@@ -1,6 +1,34 @@
+<<<<<<< HEAD
 <?php
 include './header/header.php' 
 ?>
+=======
+<html>
+<head>
+	<title>Home</title>
+	<?php 
+		error_reporting(1);
+		define ('APP_ROOT',substr(dirname(__FILE__),0, strrpos(dirname(__FILE__),'/',-1)));
+		include APP_ROOT.'/configuration/site-header.php';
+	?>	
+</head>
+<body>
+	<div class="container">
+		<?php
+			if (session_status() == PHP_SESSION_NONE) {
+			    echo "<div class='ui fixed transparent inverted main menu nav'>
+			    		<div class='container'>
+				    		<a class='item'>
+							    <i class='home icon'></i>
+							</a>
+						</div>
+					</div>";
+			}
+			else{ 
+				echo "Test";
+			}
+		?>
+>>>>>>> a8bf0256a546f175d0f6ede44622f211e64e25b5
 		<div class="front-page">
 			<div class="ui grid">
 				<div class="eight wide column">
