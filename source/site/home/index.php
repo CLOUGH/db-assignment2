@@ -54,7 +54,7 @@
 							<div class="field">
 								<label>Password</label>
 								<div class="ui left labeled icon input">
-									<input type="password" name="password">
+									<input type="password" name="user_password">
 									    <i class="lock icon"></i>
 									<div class="ui corner label">
 									    <i class="icon asterisk"></i>
