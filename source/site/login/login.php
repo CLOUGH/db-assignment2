@@ -1,6 +1,4 @@
 <?php 
-session_start();
-
 $user_email = $_POST['user_email'];
 $user_password = $_POST['password'];
 
@@ -18,6 +16,7 @@ if(count($results)!=0)
 	if($results['password']==$user_password)
 	{
 		$_SESSION['user'] = $results['user_id'];
+		header("location:./profile/index.php");
 	}
 	else
 	{
