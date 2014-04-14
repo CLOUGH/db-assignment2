@@ -1,3 +1,3 @@
 <?php
-include './login/index.php';
+include './home/index.php';
 ?>
