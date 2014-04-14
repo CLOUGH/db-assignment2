@@ -1,3 +1,3 @@
 <?php
-include './home/index.php';
+include 'home/index.php';
 ?>

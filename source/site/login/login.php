@@ -1,8 +1,9 @@
 <?php 
-session_start();
 define ('APP_ROOT',substr(dirname(__FILE__),0, strrpos(dirname(__FILE__),'/',-1)));
 include APP_ROOT.'/configuration/hash-key.php';
 include APP_ROOT.'/configuration/config.php';
+
+session_start();
 
 $user_email = $_POST['user_email'];
 $user_password = crypt($_POST['user_password'],HASH_KEY);
@@ -21,7 +22,8 @@ if(count($results)!=0)
 	if($results['password']==$user_password)
 	{
 		$_SESSION['user'] = $results['user_id'];
-		header("Location: http://".$_SERVER['SERVER_NAME']."/db-assignment2/source/site/home");
+
+		header("location: http://".$_SERVER['SERVER_NAME'].'/db-assignment2/source/profile/index.php');
 	}
 	else
 	{
