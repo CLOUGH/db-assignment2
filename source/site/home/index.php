@@ -64,35 +64,51 @@
 						</div>
 						<input class="ui blue submit button" type="submit" value="Submit">
 				   	</form>	
-				   	<form class="ui fluid form segment" method="POST" action="http://<?php echo $_SERVER['SERVER_NAME'];?>/db-assignment2/source/site/register/register.php">
-				   		<h3 class="ui header" >Register</h3>
-				   		<div class="two fields">
-					        <div class="field">
-					          <label>First Name</label>
-					          <input placeholder="First Name" type="text">
-					        </div>
-					        <div class="field">
-					          <label>Last Name</label>
-					          <input placeholder="Last Name" type="text">
-					        </div>
-      					</div>
-					    <div class="field">
-					        <label>Username</label>
-					        <input placeholder="Username" type="text">
-					    </div>
-					    	<div class="field">
-					        	<label>Password</label>
-					        	<input type="password">
-					    </div>
-					    <div class="inline field">
-					        <div class="ui checkbox">
-					         	<input type="checkbox" id="conditions">
-					         	<label for="conditions">I agree to the terms and conditions</label>
-					        </div>
-					    </div>
-					    <input class="ui blue submit button" type="submit" value="Submit">
-				   	</form>	
+				   	<form method="POST" action="http://<?php echo $_SERVER['SERVER_NAME'];?>/db-assignment2/source/site/register/register.php" class="ui error form segment">
 
+						<?php if ($_SESSION['error_msg'] != ''): ?>
+							<div class="ui error message">
+								<?php echo "Session data : ". $_SESSION['error_msg']; ?>
+								<!--div class="header">Action Forbidden</div-->
+							</div>
+							<?php 
+								//clear session error msg
+								$_SESSION['error_msg'] = null;
+							?>
+						<?php endif;?>
+						<div class="two fields">
+						    <div class="field">
+						      <label>First Name</label>
+						      <input placeholder="First Name" type="text" name="user_fname">
+						    </div>
+						    <div class="field">
+						      <label>Last Name</label>
+						      <input placeholder="Last Name" type="text" name="user_lname">
+						    </div>
+						</div>
+						<div class="field">
+							<label>Date of Birth</label>
+							<div class="ui icon input">
+								<input type="text" value="dd-mm-yyyy" name="user_dob" >
+								<i class="calendar icon"></i>
+							</div>
+						</div>
+						<div class="field">
+							<label>Email</label>
+						    <input placeholder="Email" type="text" name="user_email">
+						</div>
+						<div class="field">
+							<label>Password</label>
+						    <input type="password" name="user_password">
+						</div>
+						<div class="inline field">
+							<div class="ui checkbox">
+						    	<input type="checkbox">
+						      	<label>I agree to the Terms and Conditions</label>
+						    </div>
+						</div>
+						<input type="submit" class="ui blue button"/>
+						</div>
 				</div>
 			</div>
 		</div>

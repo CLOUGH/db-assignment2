@@ -1,8 +1,8 @@
 
 <?php 
 	define ('APP_ROOT',substr(dirname(__FILE__),0, strrpos(dirname(__FILE__),'/',-1)));
-	include APP_ROOT.'/configuration/hash-key.php';
-	include APP_ROOT.'/configuration/config.php';
+	include APP_ROOT.'../configuration/hash-key.php';
+	include APP_ROOT.'../configuration/config.php';
 
 	session_start();
 
@@ -18,7 +18,7 @@
 
 	$mysqli->autocommit(FALSE);
 	try {
-		$mysqli->begin_transaction();
+		//$mysqli->begin_transaction();
 
 		//setup the user account
 		$resultSet = $mysqli->query("INSERT INTO user(status,password,email) VALUES ('active','$user_password','$user_email');");

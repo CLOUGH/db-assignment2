@@ -4,7 +4,7 @@
 	<?php 
 		error_reporting(0);
 		define ('APP_ROOT',substr(dirname(__FILE__),0, strrpos(dirname(__FILE__),'/',-1)));
-		include APP_ROOT.'/configuration/site-header.php';
+		include APP_ROOT.'../configuration/site-header.php';
 		session_start();
 
 	?>	
@@ -58,6 +58,7 @@
 				</div>
 				<input type="submit" class="ui blue button"/>
 			</div>
+		
 		</div>
 	</div>
 </body>
