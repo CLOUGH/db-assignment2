@@ -2,7 +2,7 @@
 * STRONG ENTITIES
 */
 CREATE TABLE user(
-	user_id INT NOT NULL,
+	user_id INT NOT NULL AUTO_INCREMENT,
 	status VARCHAR (255),
 	password VARCHAR(255),
 	email VARCHAR(255) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE user(
 	UNIQUE (email)
 );
 CREATE TABLE post(
-	post_id INT NOT NULL,
+	post_id INT NOT NULL AUTO_INCREMENT,
 	post_type VARCHAR(255),
 	image_path VARCHAR(255),
 	text_body BLOB,
@@ -19,7 +19,7 @@ CREATE TABLE post(
 	PRIMARY KEY (post_id)
 );
 CREATE TABLE comment(
-	comment_id INT NOT NULL,
+	comment_id INT NOT NULL AUTO_INCREMENT, 
 	content BLOB,
 
 	PRIMARY KEY (comment_id)
@@ -34,7 +34,7 @@ CREATE TABLE user_group(
 
 
 CREATE TABLE group_post(
-	gpost_id INT NOT NULL,
+	gpost_id INT NOT NULL AUTO_INCREMENT,
 	title VARCHAR(255),
 	g_post_type VARCHAR(255),
 	g_image_path VARCHAR(255),
@@ -155,4 +155,3 @@ BEGIN
 END $$
 DELIMITER;
 */
-

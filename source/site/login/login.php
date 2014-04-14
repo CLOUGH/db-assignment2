@@ -5,7 +5,7 @@ $user_email = $_POST['user_email'];
 $user_password = $_POST['password'];
 
 //open a db connection
-$mysqli = new mysqli('localhost', 'user', 'gtx@6075', 'demo');
+$mysqli = new mysqli('localhost', 'root', '', 'db_assignment2');
 if($mysqli->connect_errno > 0)
 	die('Unable to connect to the database ['.$mysqli->connect_error.']');
 
