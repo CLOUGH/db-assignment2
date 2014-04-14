@@ -138,12 +138,15 @@ TABLE ALTERATIONS
 /*
 STORED PROCEDURES
 */
+
+DELIMITER //
+	 CREATE PROCEDURE lookUpUser(IN user_email varchar(255))
+	 BEGIN
+		SELECT * FROM user WHERE email=user_email;
+	 END //
+	DELIMITER ;
 DELIMITER $$
-CREATE PROCEDURE `lookUpUser`(IN `userEmailVar` VARCHAR(255))
-BEGIN
-	SELECT * FROM `user` WHERE `user`.`email`=`userEmailVar`;
-END $$
-DELIMITER;
+
 /*
 DELIMITER $$
 CREATE PROCEDURE `registerUser`(IN `user_email` VARCHAR(255), IN `user_lname`, IN `user_password`, IN `user_fname` VARCHAR(255))
