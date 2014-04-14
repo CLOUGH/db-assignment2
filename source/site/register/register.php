@@ -36,7 +36,7 @@
 			throw new Exception('Error: ' .$mysqli->error);
 	
 		$mysqli->commit();
-		header("Location: http://".$_SERVER['SERVER_NAME']."/db-assignment2/source/site/");
+		header("Location: http://".$_SERVER['SERVER_NAME']."/db-assignment2/source/site/profile/profile_page.php");
 	}catch(Exception $e)
 	{
 		//Rollback the transaction
