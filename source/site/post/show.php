@@ -17,17 +17,19 @@
 	    	<div class="column">		        		
 	        	<!-- PAGE CONTENT -->
 				<div class="ui grid page-main-content">
-					
+					<?php 
+						$post_id = $_GET['post_id'];
+						$post = getPost($post_id);
+					?>
 
 					<div class="ui one wide column">	
-					</div>
-					
+					</div>					
 					<div class="ui fourteen wide column content-area">
 					@include('blogs.edit-bar', array('active_views'=>$active_views,'blog'=>$blog))
 						<div class="content">
-							<h2 class="ui header">{{$blog->title}}</h2>
+							<h2 class="ui header"><?php echo $post['title'];?></h2>
 							<div class="blog-body">
-								{{$blog->body}}
+								<?php echo $post['text_body'];?>
 							</div>
 						</div>
 					</div>	
@@ -36,13 +38,13 @@
 					</div>
 				</div>
 				<div class="page-comments">
-
-						<div class="ui grid comments" >
-							<div class="comment">
-								
-							</div>
+					<button class="ui button">Add Comment</button>
+					<div class="ui grid comments" >
+						<div class="comment">
+							
 						</div>
-					
+					</div>
+				
 				</div>
 				<!-- END OF CONTENT -->
 	    	</div>		            

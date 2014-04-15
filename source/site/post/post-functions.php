@@ -17,4 +17,21 @@ function getAllPost($user_id)
 	$mysqli->close();
 	return $resultSet;
 }
+
+function getPost($post_id)
+{
+	//open a db connection
+	$mysqli = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
+	if($mysqli->connect_errno > 0)
+		die('Unable to connect to the database ['.$mysqli->connect_error.']');
+
+	$sql =  "SELECT post.post_id, date_created, image_path, title, description,text_body FROM post 
+			JOIN creates ON creates.post_id = post.post_id 
+			WHERE post.post_id = '$post_id'";
+	$resultSet = $mysqli->query($sql);
+
+	$mysqli->close();
+	return $resultSet->fetch_array();
+
+}
 ?>
