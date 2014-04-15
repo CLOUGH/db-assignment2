@@ -20,7 +20,7 @@ CREATE TABLE post(
 );
 CREATE TABLE comment(
 	comment_id INT NOT NULL AUTO_INCREMENT, 
-	content BLOB,
+	content VARCHAR(1000),
 
 	PRIMARY KEY (comment_id)
 );
