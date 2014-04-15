@@ -14,9 +14,7 @@ CREATE TABLE post(
 	post_id INT NOT NULL AUTO_INCREMENT,
 	post_type VARCHAR(255),
 	image_path VARCHAR(255),
-	title VARCHAR(255),
-	description VARCHAR(1000),
-	text_body BLOB,
+	text_body VARCHAR(2000),
 
 	PRIMARY KEY (post_id)
 );
