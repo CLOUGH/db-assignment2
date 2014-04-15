@@ -1,8 +1,8 @@
 <?php
 	
-	require_once('../auth.php');
+	require_once('../services/auth.php');
 	include '../header/header.php';
-	require_once('../global_queries.php');
+	require_once('../services/global_queries.php');
 	
 ?>
 
@@ -15,7 +15,7 @@
 						  	<a class="ui right red corner label">
 						    	<i class="setting basic icon"></i>
 						  	</a>
-							<img class="rounded ui image center aligned" src="http://placehold.it/300x150">
+							<img class="rounded ui image center aligned" src="<?php echo $pic[0]; ?>">
 						</div>
 						<table class="ui basic table">
 						  <thead>
@@ -26,7 +26,7 @@
 						</thead>
 						 <tbody>
 						    <tr>
-						      <td><?php print_r($count[0]);?></td>
+						      <td><?php print_r($total_friends);?></td>
 						      <td><?php print_r($post_count[0]);?></td>						      
 						    </tr>
 						   
@@ -36,7 +36,19 @@
 
 
 				</div>
-
+				<div class="ui modal">
+					  	<i class="close icon"></i>
+					<div class="header">
+						    Upload Profile Picture
+					</div>
+					<div class="content">
+					   <form action="../services/upload.php" method="post" enctype="multipart/form-data">
+						    <input type="file" name="file">
+						    <input type="submit">
+						</form>
+					</div>
+					  	
+				</div>
 				<div class = "eleven wide column">
 					<div class="ui segment">
 
@@ -46,6 +58,10 @@
 			</div>
 		</div>
 	</div>
-
+<script>
+ $('.setting').click(function(){
+        $('.ui.modal').modal('show');
+    });
+</script>
 </body>
 </html>
