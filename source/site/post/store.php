@@ -48,3 +48,6 @@
 		$mysqli->rollback();
 		header("Location: http://".SERVER."/db-assignment2/source/site/post/create.php");
 	}
+
+	$mysqli->close();
+?>

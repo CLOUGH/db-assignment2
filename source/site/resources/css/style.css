@@ -117,3 +117,13 @@ html, body {
 	padding:30px 30px 30px 30px;
 
 }
+
+.container{
+	max-width: 1190px;
+	width: auto;
+	margin: 0 auto;
+}
+
+.content{
+	margin-top: 8%;
+}
