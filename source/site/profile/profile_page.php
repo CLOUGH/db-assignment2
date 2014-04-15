@@ -1,43 +1,10 @@
-<html>
-<head>
-	<title>Home</title>
-	<?php 
-		error_reporting(1);
-		
-		include '../configuration/site-header.php';
-		session_start();
-		echo $_SESSION['user'];
-	?>	
-</head>
-<body>
-	<div class="container">
-		<?php
-			if (session_status() == PHP_SESSION_NONE) {
-			    echo "<div class='ui fixed transparent inverted main menu nav'>
-			    		<div class='container'>
-				    		<a class='item'>
-							    <i class='home icon'></i>
-							</a>
-						</div>
-					</div>";
-			}
-			else{ 
-				echo "<div class='ui fixed transparent inverted main menu nav'>
-			    		<div class='container'>
-				    		<a class='item'>Home</a>
-				    		 <div class='right menu'>
-							    <div class='item'>
-							      <div class='ui icon input'>
-							        <input type='text' placeholder='Search...''>
-							        <i class='search link icon'></i>
-							      </div>
-							    </div>
-							 </div>
-						</div>
-					</div>";
-			}
-		?>
-		
+<?php
+	
+	require_once('../services/auth.php');
+	include '../header/header.php';
+	require_once('../services/global_queries.php');
+	
+?>
 
 		<div class = "content">
 
@@ -48,13 +15,40 @@
 						  	<a class="ui right red corner label">
 						    	<i class="setting basic icon"></i>
 						  	</a>
-							<img class="rounded ui image center aligned" src="http://placehold.it/300x150">
-						</div>	
+							<img class="rounded ui image center aligned" src="<?php echo $pic[0]; ?>">
+						</div>
+						<table class="ui basic table">
+						  <thead>
+						    <tr>
+							    <th>Friends</th>
+							    <th>Posts</th>						    
+						  	</tr>
+						</thead>
+						 <tbody>
+						    <tr>
+						      <td><?php print_r($total_friends);?></td>
+						      <td><?php print_r($post_count[0]);?></td>						      
+						    </tr>
+						   
+						  </tbody>
+						</table>
 					</div>
 
 
 				</div>
-
+				<div class="ui modal">
+					  	<i class="close icon"></i>
+					<div class="header">
+						    Upload Profile Picture
+					</div>
+					<div class="content">
+					   <form action="../services/upload.php" method="post" enctype="multipart/form-data">
+						    <input type="file" name="file">
+						    <input type="submit">
+						</form>
+					</div>
+					  	
+				</div>
 				<div class = "eleven wide column">
 					<div class="ui segment">
 
@@ -64,6 +58,10 @@
 			</div>
 		</div>
 	</div>
-
+<script>
+ $('.setting').click(function(){
+        $('.ui.modal').modal('show');
+    });
+</script>
 </body>
 </html>

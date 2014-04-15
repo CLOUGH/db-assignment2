@@ -20,8 +20,11 @@ if(count($results)!=0)
 {
 	if($results['password']==$user_password)
 	{
+		session_regenerate_id();
 		$_SESSION['user'] = $results['user_id'];
+		session_write_close();
 		header("location: http://".$_SERVER['SERVER_NAME'].'/db-assignment2/source/site/profile/profile_page.php');
+		exit();
 	}
 	else
 	{
