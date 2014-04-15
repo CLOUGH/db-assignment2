@@ -28,15 +28,16 @@
 			<div class="ui grid">
 				<div class="eight wide column">
 				   <div class="ui segment">
-				   		<h1 class="ui header">Welcome!!</h1>
-				   		<p>
-				   			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-				   			standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-				   			 a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
-				   			 remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
-				   			 containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-				   			  including versions of Lorem Ipsum.
+				   		<h1 class="ui header" align = "center"><img src="/db-assignment2/source/site/images/Graphics/Logo.png" alt = "MyBook Logo" width="459" height="145"></h1>
+				   		
+				   		<p align = "center">
+				   			<font size = "5.5" face = "calibri" >
+				   					Welcome to MyBook social network. Connect with your friends and family today.
+				   			</font>
+				   			
 				   		</p>
+				   		<br><br/>
+				   		<img src="/db-assignment2/source/site/images/Graphics/friends.jpg" alt = "Friends" width="545" height="420">
 				   </div>
 				</div>
 				<div class="five wide column">				   

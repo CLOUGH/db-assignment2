@@ -13,11 +13,12 @@
 		die('Unable to connect to the database ['.$mysqli->connect_error.']');
 
 	$mysqli->autocommit(FALSE);
+	
 	try {
 		
 	}catch(Exception $e)
 	{
 
 	}
-
+	
 ?>
