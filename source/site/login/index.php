@@ -3,9 +3,7 @@
 	<title>Home</title>
 	<?php 
 		session_start();
-		error_reporting(0);
-		define ('APP_ROOT',substr(dirname(__FILE__),0, strrpos(dirname(__FILE__),'/',-1)));
-		include APP_ROOT.'/configuration/site-header.php' 
+		include '../configuration/site-header.php' 
 	?>	
 </head>
 <body>
