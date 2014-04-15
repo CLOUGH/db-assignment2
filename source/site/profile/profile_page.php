@@ -1,7 +1,9 @@
 <?php
+	
 	require_once('../auth.php');
 	include '../header/header.php';
-	echo $_SESSION['user'];
+	require_once('../global_queries.php');
+	
 ?>
 
 		<div class = "content">
@@ -14,7 +16,22 @@
 						    	<i class="setting basic icon"></i>
 						  	</a>
 							<img class="rounded ui image center aligned" src="http://placehold.it/300x150">
-						</div>	
+						</div>
+						<table class="ui basic table">
+						  <thead>
+						    <tr>
+							    <th>Friends</th>
+							    <th>Posts</th>						    
+						  	</tr>
+						</thead>
+						 <tbody>
+						    <tr>
+						      <td><?php print_r($count[0]);?></td>
+						      <td><?php print_r($post_count[0]);?></td>						      
+						    </tr>
+						   
+						  </tbody>
+						</table>
 					</div>
 
 
