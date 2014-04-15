@@ -3,17 +3,17 @@
 	left: 0px;
 }
 
-.container{
+/*.container{
 
 	max-width: 1190px;
 	width: auto;
 	margin: 0 auto;
 }
-
-.content{
+*/
+/*.content{
 
 	margin-top: 8%;
-}
+}*/
 
 .front-page{
 
@@ -22,4 +22,98 @@
 body{
 	background-color: #3a92c8;
 	background: radial-gradient(circle,#94d2f8,#3a92c8);
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+	color: #555555;
+}
+*{
+	margin: 0;
+}
+html, body {
+  height: 100%;
+  font-size: 15px;
+}
+.page-container{
+	padding-right: 20px;
+	padding-left:20px;
+	margin-top: 20px !important;
+	background-color: #f0f2f0;
+}
+.wrapper
+{
+	min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px;
+
+  background-color: #f0f2f0;
+}
+.wrapper:after {
+  content: "";
+  display: block;
+}
+.page-footer, .wrapper:after {
+  /* .push must be the same height as footer */
+  height: 142px; 
+  padding-top: 20px;
+}
+.post .post-body
+{
+	overflow: hidden;
+	padding: 20px 32px;
+	clear:both;
+}
+.post .post-image
+{
+	overflow: hidden;
+}
+
+.post .post-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+.post
+{
+	padding: 10px 0px 50px 0px;
+	background-color: white;
+	border-bottom: 3px solid #ddd;
+	margin-top: 20px;
+}
+.post .post-header
+{
+	padding-left: 20px;
+	padding-right: 20px;
+	overflow: hidden;
+}
+.post-header hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	/* padding: 0; */
+	clear: both;
+	width: 99%;
+	margin: auto;
+}
+.post .post-header a 
+{
+	text-decoration: none;
+}
+.post .post-header .profile-pic
+{
+	float:left;
+	height:75px;
+}
+.content-area
+{
+	background: white;
+	border-bottom: 3px solid #ddd;
+	padding:0 !important;
+}
+.content-area .content
+{
+	padding:30px 30px 30px 30px;
+
 }

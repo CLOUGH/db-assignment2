@@ -13,7 +13,7 @@
 		<div class="page-header">
 	    	<?php include '../header/header.php'; ?>
 	    </div>
-	    <div class="ui grid page container">
+	    <div class="ui grid page page-container">
 	    	<div class="column">		        		
 	        	<!-- PAGE CONTENT -->
 	        	<div class="ui grid">
