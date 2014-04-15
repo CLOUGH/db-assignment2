@@ -27,18 +27,20 @@
 						<?php 
 							//get all the post for the current user
 							$user_id = $_SESSION['user'];
-							$user_posts = getAllPost($user_id);
-							var_dump($user_posts);
+							$postResultSet = getAllPost($user_id);
 						?>
-						<?php foreach( $user_posts as $user_post): ?>
+						<?php while( $user_post = $postResultSet->fetch_array()): ?>
 							<div class="ui user-post">
 								<div class="post-header">
-									<h2><?php echo $user_posts['title']; ?></h2>
+									<h2>
+										<a href="http:://<?php echo SERVER; ?>/db-assignment2/source/site/post/show.php?post_id=<?php echo $user_post['post_id'];?>"> 
+										<?php echo $user_post['title']; ?></a>
+									</h2>
 								</div>
 							</div>
-							<?php if($user_post['image']!=""): ?>
+							<?php if($user_post['image_path']!=""): ?>
 								<div class="post-image">
-									<img src="<?php echo $user_post['image']; ?>">
+									<img src="<?php echo $user_post['image_path']; ?>">
 								</div>
 							<?php endif; ?>
 							<div class="column  post-body">
@@ -46,7 +48,7 @@
 							</div>
 							<div class="post-footer">
 							</div>
-						<?php  endforeach; ?>						
+						<?php  endwhile; ?>						
 					</div>	
 					<div class="ui one wide column">
 						
