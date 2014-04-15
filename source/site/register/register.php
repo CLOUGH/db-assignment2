@@ -1,8 +1,8 @@
 
 <?php 
 	define ('APP_ROOT',substr(dirname(__FILE__),0, strrpos(dirname(__FILE__),'/',-1)));
-	include APP_ROOT.'../configuration/hash-key.php';
-	include APP_ROOT.'../configuration/config.php';
+	include APP_ROOT.'/configuration/hash-key.php';
+	include APP_ROOT.'/configuration/config.php';
 
 	session_start();
 
