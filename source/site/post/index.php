@@ -11,7 +11,7 @@
 <body>
 	<div class="wrapper">
 		<div class="page-header">
-	    	<?php include '../header/navbar.php'; ?>
+	    	<?php include '../header/header.php'; ?>
 	    </div>
 	    <div class="ui grid page page-container">
 	    	<div class="column">		        		

@@ -17,6 +17,7 @@
 		die('Unable to connect to the database ['.$mysqli->connect_error.']');
 
 	$mysqli->autocommit(FALSE);
+	
 	try {
 
 		// Create the post
@@ -47,5 +48,6 @@
 		$mysqli->rollback();
 		header("Location: http://".SERVER."/db-assignment2/source/site/post/create.php");
 	}
+
 	$mysqli->close();
 ?>

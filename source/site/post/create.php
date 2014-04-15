@@ -11,7 +11,7 @@
 <body>
 	<div class="wrapper">
 		<div class="page-header">
-	    	<?php include '../header/navbar.php'; ?>
+	    	<?php include '../header/header.php'; ?>
 	    </div>
 	    <div class="ui grid page page-container">
 	    	<div class="column">		        		
@@ -20,6 +20,7 @@
 					<div class="ui one wide column">
 						
 					</div>
+					
 					<div class="ui fourteen wide column content-area">
 						<div class="content">
 							<h2 class="ui header">Create Post</h2>

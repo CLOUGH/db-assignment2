@@ -156,5 +156,12 @@ html, body {
 	margin-right: 45px;
 	font-size: 10px;
 
-
 }
+.container{
+	max-width: 1190px;
+	width: auto;
+	margin: 0 auto;
+}
+
+.content{
+	margin-top: 8%;
