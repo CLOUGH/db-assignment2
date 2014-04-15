@@ -33,7 +33,7 @@
 							<div class="ui user-post">
 								<div class="post-header">
 									<h2>
-										<a href="http:://<?php echo SERVER; ?>/db-assignment2/source/site/post/show.php?post_id=<?php echo $user_post['post_id'];?>"> 
+										<a href="http://<?php echo SERVER; ?>/db-assignment2/source/site/post/show.php?post_id=<?php echo $user_post['post_id'];?>"> 
 										<?php echo $user_post['title']; ?></a>
 									</h2>
 								</div>
