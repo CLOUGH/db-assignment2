@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Home</title>
+	
 	<?php 
 		error_reporting(1);
 		include '../configuration/site-header.php' ;
@@ -26,6 +26,7 @@
 				    		<a class='item' href='../logout.php'>logout</a>
 
 				    		<a class="item" href="http://<?php echo $_SERVER['SERVER_NAME']?>/db-assignment2/source/site/post">Posts</a>
+				    		<a class="item" href="http://<?php echo $_SERVER['SERVER_NAME']?>/db-assignment2/source/site/group">Groups</a>
 				    		 <div class='right menu'>
 							    <div class='item'>
 							      <div class='ui icon input'>
