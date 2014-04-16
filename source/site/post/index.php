@@ -2,8 +2,8 @@
 <head>
 	<?php 
 	 session_start();
-	 include '../configuration/site-header.php';
-	 include '../configuration/config.php';
+	 include_once '../configuration/site-header.php';
+	 include_once '../configuration/config.php';
 	 include './post-functions.php';
 	?>
 	<title>Posts</title>
