@@ -178,3 +178,14 @@ table.post-table
 {
 	cursor: pointer;
 }
+.user-box 
+{
+	overflow: hidden;
+	
+}
+.user-box img
+{
+	height:100px;
+	float: left;
+	margin-right: 20px;
+}

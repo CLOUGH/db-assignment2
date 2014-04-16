@@ -35,18 +35,19 @@
 			    			<i class="off icon" title="logout" data-variation="inverted"></i>
 			    			</a>
 			    		<div class='right menu'>
-						    <div class='item'>
-						      <div class='ui icon input'>
-						        <input type='text' placeholder='Search...'>
-						        <i class='search link icon'></i>
-						      </div>
-						    </div>
+					    	<form  method="GET" action="http://<?php echo SERVER; ?>/db-assignment2/source/site/friend/friend-search.php">
+					    		<div class='item'>
+						    		<div class='ui icon input'>
+								        <input type='text' placeholder='Search...' name="search" id="friend-search-field">
+								        <i class='search link icon'></i>
+							     	</div>					    		
+					    		</div>
+					    	</form>
 						</div>
 					</div>
 			</div>
 			<script type="text/javascript">
 				$('.ui.popup')
-				  .popup()
-				;
+				  .popup();				
 			</script>
 		<?php endif; ?>
