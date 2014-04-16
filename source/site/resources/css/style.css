@@ -169,11 +169,9 @@ html, body {
 }
 table.comment-table
 {
-	width:600px !important;
 }
 table.post-table
 {
-	width: 600px !important;
 }
 
 #user-table tbody tr:hover

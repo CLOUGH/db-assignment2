@@ -63,11 +63,13 @@
 								<table class="ui table segment post-table">
 									<thead>
 										<th>Post ID</th>
+										<th>Post Type</th>
+										<th>Date Created</th>
 										<th>Post Content</th>
 									</thead>
 									<tbody>
 										<tr class="empty-row">
-											<td colspan="2">Currently no data</td>
+											<td colspan="4">Currently no data</td>
 										</tr>
 									</tbody>
 								</table>
@@ -76,12 +78,14 @@
 								<h4 class="ui header">Comments</h4>
 								<table class="ui table segment comment-table">
 									<thead>
+										<th>Comment ID</th>
 										<th>Post ID</th>
 										<th>Comment</th>
+										<th>Date Commented</th>
 									</thead>
 									<tbody>
 										<tr class="empty-row">
-											<td colspan="2">Currently no data</td>
+											<td colspan="4">Currently no data</td>
 										</tr>
 									</tbody>
 								</table>
