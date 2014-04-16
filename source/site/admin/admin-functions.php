@@ -1,7 +1,6 @@
 <?php 
 function getAllUsers()
 {
-
 	//open a db connection
 	$mysqli = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
 	if($mysqli->connect_errno > 0)
