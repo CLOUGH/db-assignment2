@@ -10,7 +10,7 @@
 <?php 
 	//get all the post for the current user
 	$user_id = $_SESSION['user'];
-	$user_posts = getAllPost($user_id);
+	$user_posts = getAllUserPost($user_id);
 ?>
 		<div class = "content">
 
