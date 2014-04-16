@@ -15,7 +15,8 @@ $("#user-table tbody tr").click(function(e){
 	.done(function(jsonObject) {
 		console.log(jsonObject);
 
-
+		//Update the user details area from the info retrieved
+		//Update the user post table
 		var user_posts = jsonObject['user_posts'];
 		var table_rows = $("<tbody>");
 		if(user_posts.length ==0 )
@@ -25,7 +26,7 @@ $("#user-table tbody tr").click(function(e){
 			table_rows.append(table_row);
 		}
 		else{
-			//Update the user details area from the info retrieved
+			
 			for(var i =0; i<user_posts.length;i++)
 			{
 				var table_row = $("<tr>");
@@ -36,6 +37,28 @@ $("#user-table tbody tr").click(function(e){
 		}		
 		$('table.post-table tbody').replaceWith(table_rows);
 		
+		//Update the comment table
+		var user_comments = jsonObject['user_comments']
+		table_rows = $("<tbody>");
+		if(user_posts.length ==0 )
+		{
+			var table_row = $("<tr>");
+			table_row.append( $("<td>").text("The does not have any posts"));
+			table_rows.append(table_row);
+		}
+		else{
+			
+			for(var i =0; i<user_posts.length;i++)
+			{
+				var table_row = $("<tr>");
+				table_row.append( $("<td>").text(user_comments[i].comment_id));
+				table_row.append( $("<td>").text(user_comments[i].post_id));
+				table_row.append( $("<td>").text(user_comments[i].content));
+				table_row.append( $("<td>").text(user_comments[i].date_commented));
+				table_rows.append(table_row);
+			}
+		}	
+		$('table.comment-table tbody').replaceWith(table_rows);
 
  	})
  	.fail(function( jqxhr, textStatus, error ) {
