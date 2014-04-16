@@ -1,5 +1,5 @@
 <?php
-include '../configuration/config.php';
+require_once '../configuration/config.php';
 //Start session
 
 	

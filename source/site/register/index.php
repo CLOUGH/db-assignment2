@@ -14,7 +14,7 @@
 			<form method="POST" action="http://<?php echo $_SERVER['SERVER_NAME'];?>/db-assignment2/source/site/register/register.php"
 			 class="ui error form segment">
 
-				<?php if ($_SESSION['error_msg'] != ''): ?>
+				<?php  if (isset($_SESSION['error_msg'])): ?>
 					<div class="ui error message">
 						<?php echo "Session data : ". $_SESSION['error_msg']; ?>
 						<!--div class="header">Action Forbidden</div-->

@@ -2,27 +2,45 @@
 <head>
 	<title>Home</title>
 	<?php 
-		error_reporting(1);
+		session_start();
 		define ('APP_ROOT',substr(dirname(__FILE__),0, strrpos(dirname(__FILE__),'/',-1)));
 		include APP_ROOT.'/configuration/site-header.php';
+		include APP_ROOT.'/configuration/config.php';
 	?>	
 </head>
 <body>
 	<div class="container">
-		<?php
-			if (session_status() == PHP_SESSION_NONE) {
-			    echo "<div class='ui fixed transparent inverted main menu nav'>
-			    		<div class='container'>
-				    		<a class='item'>
-							    <i class='home icon'></i>
-							</a>
+		<?php if (!isset($_SESSION['user'])): ?>
+		    <div class='ui fixed transparent inverted main menu nav'>
+	    		<div class='container'>
+		    		<a class='item'>
+					    <i class='home icon'></i>
+					    Home
+					</a>
+				</div>
+			</div>
+		<?php else: ?>
+			<div class='ui fixed transparent inverted main menu nav'>
+		    		<div class='container'>
+			    		<a class='item' href='../logout.php'><i class="off icon"></i></a>
+
+			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/post">Posts</a>
+			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/profile/profile_page.php">Profile</a>
+			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/index.php">
+			    			<i class='home icon'></i>
+			    			Home
+			    		</a>
+			    		<div class='right menu'>
+						    <div class='item'>
+						      <div class='ui icon input'>
+						        <input type='text' placeholder='Search...'>
+						        <i class='search link icon'></i>
+						      </div>
+						    </div>
 						</div>
-					</div>";
-			}
-			else{ 
-				echo "Test";
-			}
-		?>
+					</div>
+			</div>
+		<?php endif; ?>
 
 		<div class="front-page">
 			<div class="ui grid">
@@ -67,7 +85,7 @@
 				   	</form>	
 				   	<form method="POST" action="http://<?php echo $_SERVER['SERVER_NAME'];?>/db-assignment2/source/site/register/register.php" class="ui error form segment">
 
-						<?php if ($_SESSION['error_msg'] != ''): ?>
+						<?php if (isset($_SESSION['error_msg'])): ?>
 							<div class="ui error message">
 								<?php echo "Session data : ". $_SESSION['error_msg']; ?>
 								<!--div class="header">Action Forbidden</div-->
