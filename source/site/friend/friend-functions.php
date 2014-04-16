@@ -28,4 +28,30 @@ function findUser($search,$current_user_id)
 	return $result;
 
 }
+function getAllFiends($user_id)
+{
+	//open a db connection
+	$mysqli = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
+	if($mysqli->connect_errno > 0)
+		die('Unable to connect to the database ['.$mysqli->connect_error.']');
+
+	$sql =  "SELECT friend, user.user_id, lname, fname, email FROM user
+			JOIN friend_of ON friend_of.friend = user.user_id
+			JOIN profile ON profile.user_id  = friend_of.friend
+			WHERE friend_of.friend_owner = '$user_id'";
+
+	$resultSet = $mysqli->query($sql);
+	$result= array();
+	if($resultSet!=false)
+	{
+		while($row = $resultSet->fetch_array())
+		{
+			array_push($result, $row);
+		}
+	}
+
+	$mysqli->close();
+	return $result;
+
+}
 ?>

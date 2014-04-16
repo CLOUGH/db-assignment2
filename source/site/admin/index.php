@@ -45,7 +45,7 @@
 								
 								<br/>
 								<h4 class="ui header">Friends</h4>
-								<table class="ui table segment">
+								<table class="ui table segment friend-table">
 									<thead>
 										<th>Friend ID</th>
 										<th>Friend Name</th>

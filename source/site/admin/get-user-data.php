@@ -16,9 +16,33 @@ $("#user-table tbody tr").click(function(e){
 		console.log(jsonObject);
 
 		//Update the user details area from the info retrieved
+
+		//Update the user friend  table
+		var user_friends = jsonObject['user_friends'];
+		var table_rows = $("<tbody>");
+		if(user_friends.length ==0 )
+		{
+			var table_row = $("<tr>");
+			table_row.append( $("<td>").text("The user doesn not have any friends"));
+			table_rows.append(table_row);
+		}
+		else{
+			
+			for(var i =0; i<user_friends.length;i++)
+			{
+				var table_row = $("<tr>");
+				table_row.append( $("<td>").text(user_friends[i].friend));
+				table_row.append( $("<td>").text(user_friends[i].fname+" "+user_friends[i].lname));
+				table_row.append( $("<td>").text(user_friends[i].email));
+				table_rows.append(table_row);
+			}
+		}		
+		$('table.friend-table tbody').replaceWith(table_rows);
+		
+
 		//Update the user post table
 		var user_posts = jsonObject['user_posts'];
-		var table_rows = $("<tbody>");
+		table_rows = $("<tbody>");
 		if(user_posts.length ==0 )
 		{
 			var table_row = $("<tr>");
@@ -42,7 +66,7 @@ $("#user-table tbody tr").click(function(e){
 		//Update the comment table
 		var user_comments = jsonObject['user_comments']
 		table_rows = $("<tbody>");
-		if(user_posts.length ==0 )
+		if(user_comments.length ==0 )
 		{
 			var table_row = $("<tr>");
 			table_row.append( $("<td>").text("The does not have any posts"));
