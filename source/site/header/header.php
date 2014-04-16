@@ -31,7 +31,7 @@
 			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/admin/index.php">
 			    			Admin
 			    		</a>
-			    		<a class='item' href='../logout.php'>
+			    		<a class='item' href='http://<?php echo SERVER; ?>/db-assignment2/source/site/logout.php'>
 			    			<i class="off icon" title="logout" data-variation="inverted"></i>
 			    			</a>
 			    		<div class='right menu'>

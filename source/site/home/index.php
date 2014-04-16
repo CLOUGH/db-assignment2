@@ -22,7 +22,7 @@
 		<?php else: ?>
 			<div class='ui fixed transparent inverted main menu nav'>
 		    		<div class='container'>
-			    		<a class='item' href='../logout.php'><i class="off icon"></i></a>
+			    		<a class='item' href='http://<?php echo SERVER; ?>/db-assignment2/source/site/logout.php'><i class="off icon"></i></a>
 
 			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/post">Posts</a>
 			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/profile/profile_page.php">Profile</a>

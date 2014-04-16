@@ -35,7 +35,7 @@
 							?>
 							
 								<ul>
-									<li><?php echo $group_member['fname']." ".$group_member['lname'];?></li>
+									<li><?php echo $group_member['fname']." ".$group_member['lname']; ?></li>
 								</ul>
 							<?php }?>
 					</div>
@@ -46,7 +46,21 @@
 				<div class="ui twelve wide column">
 						
 					<div class="ui segment">
-						
+						<?php	if(empty($group_members)): ?>
+							<div style="margin-top: 20px;"> 
+								<p> Be the First to Post in this group. </p>
+							</div>
+						<?php endif;?>
+						<?php 
+							$group_posts = getGroupPost($group);
+
+							foreach ($group_posts as $group_post) {
+								?>
+								<h3 class="ui header"><?php echo $group_post['title'];?></h3>
+								<h5 class="ui header">Created By:<?php echo $group_post['fname']." ".$group_post['lname']." On ".$group_post['date_created'];?>
+								<p><?php echo $group_post['text_body'];?></p>
+								<hr>
+						<?php	}?>
 					</div>
 
 			</div>

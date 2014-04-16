@@ -43,7 +43,7 @@
 		
 
 		$mysqli->commit();
-		header("Location: http://".SERVER."/db-assignment2/source/site/group/index.php");
+		header("Location: http://".SERVER."/db-assignment2/source/site/group/group_page.php?group_id=$group_id");
 
 	}catch(Exception $e)
 	{
