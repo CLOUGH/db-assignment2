@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<?php if ($_SESSION['user']==''): ?>
+		<?php if (!isset($_SESSION['user'])): ?>
 		    <div class='ui fixed transparent inverted main menu nav'>
 	    		<div class='container'>
 		    		<a class='item'>

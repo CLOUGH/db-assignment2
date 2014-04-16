@@ -18,16 +18,22 @@
 				</div>
 			</div>
 		<?php else: ?>
+
 			<div class='ui fixed transparent inverted main menu nav'>
 		    		<div class='container'>
-			    		<a class='item' href='../logout.php'><i class="off icon"></i></a>
 
-			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/post">Posts</a>
-			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/profile/profile_page.php">Profile</a>
 			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/index.php">
 			    			<i class='home icon'></i>
 			    			Home
 			    		</a>
+			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/post">Posts</a>
+			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/profile/profile_page.php">Profile</a>
+			    		<a class="item" href="http://<?php echo SERVER; ?>/db-assignment2/source/site/admin/index.php">
+			    			Admin
+			    		</a>
+			    		<a class='item' href='../logout.php'>
+			    			<i class="off icon" title="logout" data-variation="inverted"></i>
+			    			</a>
 			    		<div class='right menu'>
 						    <div class='item'>
 						      <div class='ui icon input'>
@@ -38,4 +44,9 @@
 						</div>
 					</div>
 			</div>
+			<script type="text/javascript">
+				$('.ui.popup')
+				  .popup()
+				;
+			</script>
 		<?php endif; ?>
