@@ -131,6 +131,7 @@ CREATE TABLE create_content(
 	FOREIGN KEY (gpost_id) REFERENCES group_post(gpost_id)
 );
 
+
 /*
 TABLE ALTERATIONS
 */
