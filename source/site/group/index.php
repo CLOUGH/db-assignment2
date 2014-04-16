@@ -35,7 +35,7 @@
 								<div class="ui post">
 									<div class="post-header">
 										<h3>
-											<a href="http://<?php echo SERVER; ?>/db-assignment2/source/site/profile/profile_page.php"> 
+											<a href="http://<?php echo SERVER; ?>/db-assignment2/source/site/group/group_page.php?group_id=<?php echo $group['group_id']; ?>"> 
 											<?php echo $group['group_name']; ?></a>
 										</h3>
 										<p>Created On: <?php echo $group['date_created'];?></p>

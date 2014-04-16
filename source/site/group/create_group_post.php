@@ -4,10 +4,16 @@
 		<h3>Create New Group Post</h3>
 	</div>
 	<div class="content">
-		<form action="http://<?php echo SERVER;?>/db-assignment2/source/site/group/store_groups.php" method="POST" class="ui form" id="create-group-post-form">
+		<form action="http://<?php echo SERVER;?>/db-assignment2/source/site/group/store_group_post.php" method="POST" class="ui form" id="create-group-post-form">
+			<?php echo $_GET['group_id'];?>
 			<div class="ui field">
 				<label>Title</label>
 				<input   type="text" name ="post_title"></input>
+			</div>
+			<div class = "ui field">
+				<label>Group ID</label>
+				<input type="number" value ="<?php echo $_GET['group_id'];?>" name="group"></input>
+
 			</div>
 			<div class="ui field">
 				<label>Post Type</label>
@@ -19,7 +25,7 @@
 			</div>
 			<div class="ui field">
 				<label>Body</label>
-				<textarea name ="post_body" id="post-body"></textarea>
+				<textarea name ="post_body" ></textarea>
 			</div>
         </form>
 	</div>
@@ -28,9 +34,7 @@
 		<button class="ui positive right button save">Save</button>
 	</div>
 </div>
-<script>
-    CKEDITOR.replace( 'post-body',{height: 500});
-</script>
+
 <script type="text/javascript">
 	$("#create-group-post").click(function(event)
 	{

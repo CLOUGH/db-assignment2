@@ -7,6 +7,15 @@
 ?>	
 
 <div class = "content">
+			<div class="ui grid">
+				<div class="four wide column"></div>
+				<div class="ui twelve wide column">
+					<div>
+						<button class="ui small button" id="create-group-post">Create Group Post</button>
+					</div>
+				</div>
+
+			</div>
 
 			<div class="ui grid">
 				<div class = "four wide column">
@@ -20,17 +29,25 @@
 								<p> This Group Has No Members. </p>
 							</div>
 						<?php endif;?>
-
-
+						<h3 class="ui header">Group Members:</h3>
+						<?php 
+							foreach ($group_members as $group_member) {
+							?>
+							
+								<ul>
+									<li><?php echo $group_member['fname']." ".$group_member['lname'];?></li>
+								</ul>
+							<?php }?>
 					</div>
 
 
 				</div>
 				
 				<div class="ui twelve wide column">
-						<div>
-							<button class="ui small button" id="create-group-post">Create</button>
-						</div>
+						
+					<div class="ui segment">
+						
+					</div>
 
 			</div>
 		</div>
