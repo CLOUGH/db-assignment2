@@ -25,7 +25,8 @@
 							<!-- PAGE CONTENT -->							
 							<?php 
 								$search = $_GET['search'];
-								$user_results = findUser($search)
+								$current_user = $_SESSION['user'];
+								$user_results = findUser($search,$current_user);
 							?>
 							<h2>Search Result for "<?php echo $search; ?>"</h2>
 							<br/>

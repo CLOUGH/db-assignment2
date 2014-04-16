@@ -1,5 +1,5 @@
 <?php
-function findUser($search)
+function findUser($search,$current_user_id)
 {
 	//open a db connection
 	$mysqli = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
@@ -8,8 +8,13 @@ function findUser($search)
 
 	$sql =  "SELECT user.user_id, email, fname, lname FROM user 
 			JOIN profile ON profile.user_id = user.user_id 
-			WHERE CONCAT_WS(' ', fname,lname) LIKE  '%$search%';";
+			WHERE CONCAT_WS(' ', fname,lname) LIKE  '%$search%' 
+			AND user.user_id<>'$current_user_id'
+			AND user.user_id NOT IN( 
+				SELECT friend as user_id FROM friend_of WHERE friend_owner='$current_user_id' 
+			);";
 
+	echo  $sql;
 	$resultSet = $mysqli->query($sql);
 	$result= array();
 	if($resultSet!=false)
