@@ -12,7 +12,13 @@ function getAllPost($user_id)
 	$sql =  "SELECT post_type, fname, lname, post.post_id, date_created, image_path,text_body FROM post 
 			JOIN creates ON creates.post_id = post.post_id 
 			JOIN profile ON profile.user_id = creates.user_id
-			WHERE creates.user_id = '$user_id'";
+			WHERE creates.user_id = '$user_id'
+			OR post.post_id IN (
+				SELECT post.post_id FROM friend_of 
+    			JOIN creates ON creates.user_id = friend_of.friend
+    			JOIN post ON post.post_id  = creates.post_id
+    			WHERE friend_of.friend_owner = '3'
+    		);";
 	$resultSet = $mysqli->query($sql);
 	$result= array();
 	if($resultSet!=false)
@@ -26,6 +32,31 @@ function getAllPost($user_id)
 	$mysqli->close();
 	return $result;
 }
+function getAllUserPost($user_id)
+{
+	//open a db connection
+	$mysqli = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
+	if($mysqli->connect_errno > 0)
+		die('Unable to connect to the database ['.$mysqli->connect_error.']');
+
+	$sql =  "SELECT post_type, fname, lname, post.post_id, date_created, image_path,text_body FROM post 
+			JOIN creates ON creates.post_id = post.post_id 
+			JOIN profile ON profile.user_id = creates.user_id
+			WHERE creates.user_id = '$user_id';";
+	$resultSet = $mysqli->query($sql);
+	$result= array();
+	if($resultSet!=false)
+	{
+		while($row = $resultSet->fetch_array())
+		{
+			array_push($result, $row);
+		}
+	}
+
+	$mysqli->close();
+	return $result;
+}
+
 
 function getPost($post_id)
 {

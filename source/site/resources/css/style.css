@@ -146,9 +146,9 @@ html, body {
 }
 .user-comment .comment-content
 {	
-	width: 40em;
+	width: 84%;
 	margin-left: 10px;
-	float:right;
+	float:left;
 }
 .date-commented
 {
