@@ -20,6 +20,9 @@ $total_friends = $count[0] + $inverse_count[0];
 $post = $mysqli->query("SELECT COUNT(user_id) FROM `creates` WHERE user_id = ".$_SESSION['user'].";");
 $post_count = $post->fetch_array();
 
+$groups = $mysqli->query("SELECT COUNT(user_id) FROM `add_to_group` WHERE user_id = ".$_SESSION['user'].";");
+$groups_count = $groups->fetch_array();
+
 $Profile_pic = $mysqli->query("SELECT profile_pic FROM `profile` WHERE user_id = ".$_SESSION['user'].";");
 $pic = $Profile_pic->fetch_array();
 
