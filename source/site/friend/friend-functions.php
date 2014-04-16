@@ -14,7 +14,6 @@ function findUser($search,$current_user_id)
 				SELECT friend as user_id FROM friend_of WHERE friend_owner='$current_user_id' 
 			);";
 
-	echo  $sql;
 	$resultSet = $mysqli->query($sql);
 	$result= array();
 	if($resultSet!=false)

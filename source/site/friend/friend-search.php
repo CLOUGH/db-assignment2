@@ -37,11 +37,31 @@
 									<h4><?php echo $user_result['fname']." ".$user_result['lname'] ?></h4>
 									<br>
 									<div>
-										<button class="ui tiny blue button">Add Friend<i class="add icon"></i></button>
+										<button class="ui tiny blue button add-friend-button">Add Friend<i class="add icon"></i></button>					
+										<form method="POST" id="friend-<?php echo $user_result['user_id'];?>-form"
+											action="http://<?php echo SERVER;?>/db-assignment2/source/site/friend/add-friend.php">
+											<input type="hidden" value="<?php echo $user_result['user_id']; ?>" name="friend_id">
+											<input type="hidden" value="<?php echo $search; ?>" name="search">
+										</form>
 									</div>
 								</div>
 							<?php endforeach; ?>
-							
+							<script type="text/javascript">
+								$('.add-friend-button').click(function(e)
+								{
+									console.log($(e.currentTarget.parentElement).find('form'));
+									var add_friend_form = $(e.currentTarget.parentElement).find('form');
+									add_friend_form.submit();
+									//alert("test");
+									// var friend = "";
+									// $.post("http://<?php echo SERVER;?>/db-assignment2/source/site/friend/add-friend.php",
+									// 	{friend_id: friend})
+									// 	.done(function( data ) {
+									// 	    alert( "Data Loaded: " + data );
+									// });
+									
+								});
+							</script>
 
 							<!-- END OF CONTENT -->
 							</div>
