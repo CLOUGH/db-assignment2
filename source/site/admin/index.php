@@ -63,11 +63,12 @@
 								<table class="ui table segment post-table">
 									<thead>
 										<th>Post ID</th>
+										<th>Post Type</th>
 										<th>Post Content</th>
 									</thead>
 									<tbody>
 										<tr class="empty-row">
-											<td colspan="2">Currently no data</td>
+											<td colspan="3">Currently no data</td>
 										</tr>
 									</tbody>
 								</table>
