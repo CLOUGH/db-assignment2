@@ -45,7 +45,23 @@ function getPost($post_id)
 }
 function getUserProfilePic($user_id)
 {
-	return "http://".SERVER."/db-assignment2/source/site/resources/images/profile_pics/default-user.png";
+
+	//open a db connection
+	$mysqli = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
+	if($mysqli->connect_errno > 0)
+		die('Unable to connect to the database ['.$mysqli->connect_error.']');
+
+	$sql =  "SELECT profile_pic FROM profile WHERE user_id=$user_id";
+
+	$result = $mysqli->query($sql);
+	$img = $result->fetch_array();
+	if(is_null($img['profile_pic'])){
+		return "http://".SERVER."/db-assignment2/source/site/resources/images/profile_pics/default-user.png";
+	}
+	else{
+		return $img['profile_pic'];
+	}
+
 }
 
 function getAllCommentsForPost($post_id)

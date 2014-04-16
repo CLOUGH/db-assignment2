@@ -7,7 +7,11 @@
 	
 ?>	
 	
-
+<?php 
+	//get all the post for the current user
+	$user_id = $_SESSION['user'];
+	$user_posts = getAllPost($user_id);
+?>
 		<div class = "content">
 
 			<div class="ui grid">
@@ -17,19 +21,21 @@
 						  	<a class="ui right red corner label">
 						    	<i class="setting basic icon"></i>
 						  	</a>
-							<img class="rounded ui image center aligned" src="<?php echo $pic[0]; ?>">
+							<img class="rounded ui image center aligned" src="<?php echo getUserProfilePic($user_id);?>">
 						</div>
 						<table class="ui basic table">
 						  <thead>
 						    <tr>
 							    <th>Friends</th>
-							    <th>Posts</th>						    
+							    <th>Posts</th>
+							    <th>Groups</th>							    
 						  	</tr>
 						</thead>
 						 <tbody>
 						    <tr>
 						      <td><?php print_r($total_friends);?></td>
-						      <td><?php print_r($post_count[0]);?></td>						      
+						      <td><?php print_r($post_count[0]);?></td>
+						      <td><?php print_r($groups_count[0]);?></td>							      
 						    </tr>
 						   
 						  </tbody>
@@ -54,11 +60,7 @@
 				<div class = "eleven wide column">
 					<div class="ui segment">
 
-					<?php 
-							//get all the post for the current user
-							$user_id = $_SESSION['user'];
-							$user_posts = getAllPost($user_id);
-						?>
+					
 						<?php	if(empty($user_posts)): ?>
 							<div style="margin-top: 20px;"> 
 								<p> You currently have no post. </p>
@@ -69,7 +71,7 @@
 						<?php foreach($user_posts as $user_post): ?>
 							<div class="ui post">
 								<div class="post-header">
-									<img class="profile-pic" src="http://<?php echo SERVER;?>/db-assignment2/source/site/resources/images/profile_pics/default-user.png">
+									<img class="profile-pic" src="<?php echo getUserProfilePic($user_id);?>">
 									<h3>
 										<a href="http://<?php echo SERVER; ?>/db-assignment2/source/site/profile/profile_page.php"> 
 										<?php echo $user_post['fname']." ".$user_post['lname']; ?></a>

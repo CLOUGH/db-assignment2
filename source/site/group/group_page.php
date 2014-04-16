@@ -59,9 +59,9 @@
 							foreach ($group_posts as $group_post) {
 								?>
 								<h3 class="ui header"><?php echo $group_post['title'];?></h3>
-								<h5 class="ui header">Created By:<?php echo $group_post['fname']." ".$group_post['lname']." On ".$group_post['date_created'];?>
+								<p>Created By: <?php echo $group_post['fname']." ".$group_post['lname']." On ".$group_post['date_created'];?></p>
 								<p><?php echo $group_post['text_body'];?></p>
-								<hr>
+								<div class="ui section divider"></div>
 						<?php	}?>
 					</div>
 
