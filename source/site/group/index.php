@@ -2,7 +2,6 @@
 	require_once('../services/auth.php');
 	include '../header/header.php'; 
 	include '../configuration/site-header.php';
-	include '../configuration/config.php';
 	include './groups_functions.php';
 
 ?>
