@@ -164,6 +164,7 @@ html, body {
 }
 
 .content{
+
 	margin-top: 8%;
 }
 table.comment-table
@@ -174,6 +175,7 @@ table.post-table
 {
 	width: 600px !important;
 }
+
 #user-table tbody tr:hover
 {
 	cursor: pointer;

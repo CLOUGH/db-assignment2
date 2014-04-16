@@ -1,7 +1,11 @@
 <html>
 <head>
 	<?php 
-	 session_start();
+
+	
+	require_once('../services/auth.php');
+	
+
 	 include_once '../configuration/site-header.php';
 	 include_once '../configuration/config.php';
 	 include './post-functions.php';
