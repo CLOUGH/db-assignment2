@@ -46,14 +46,16 @@
 				<div class="ui twelve wide column">
 						
 					<div class="ui segment">
-						<?php	if(empty($group_members)): ?>
+						
+						<?php 
+							$group_posts = getGroupPost($group);
+							?>
+							<?php	if(empty($group_posts)): ?>
 							<div style="margin-top: 20px;"> 
 								<p> Be the First to Post in this group. </p>
 							</div>
 						<?php endif;?>
-						<?php 
-							$group_posts = getGroupPost($group);
-
+						<?php
 							foreach ($group_posts as $group_post) {
 								?>
 								<h3 class="ui header"><?php echo $group_post['title'];?></h3>
