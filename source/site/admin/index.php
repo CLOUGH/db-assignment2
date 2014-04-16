@@ -6,7 +6,7 @@
 	 include_once '../configuration/config.php';
 	 include_once './admin-functions.php';
 	?>
-	<title>Posts</title>
+	<title>Admin</title>
 </head>
 <body>
 	<div class="wrapper">
@@ -22,7 +22,7 @@
 						<div class="ui fourteen wide column content-area">
 							<div class="page-content">
 								<h2>Users</h2>
-								<table class="ui table segment">
+								<table class="ui table segment" id="user-table">
 									<thead>
 										<th>User ID</th>
 										<th>User Name</th>
@@ -32,7 +32,7 @@
 									<?php $users = getAllUsers(); ?>
 									<?php foreach($users as $user): ?>
 										<tr>
-											<td><?php echo $user['user_id']; ?></td>
+											<td class="user-id"><?php echo $user['user_id']; ?></td>
 											<td><?php echo $user['fname']." ".$user['lname']; ?></td>
 											<td><?php echo $user['email']; ?></td>
 										</tr>
@@ -41,7 +41,7 @@
 								</table>
 								<br/>
 								<div class="ui divider"></div>
-								<h2>User Details</h2>
+								<h2>User Details <span id="user-detail-span"></span></h2>
 								
 								<br/>
 								<h4 class="ui header">Friends</h4>
@@ -90,6 +90,7 @@
 						</div>
 						<div class="ui one wide column">
 						</div>
+						<?php include "./get-user-data.php"; ?>
 
 					</div>
 				</div>

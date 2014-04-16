@@ -176,3 +176,7 @@ table.post-table
 	width: 600px !important;
 }
 
+#user-table tbody tr:hover
+{
+	cursor: pointer;
+}
