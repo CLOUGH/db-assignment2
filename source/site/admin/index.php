@@ -64,11 +64,12 @@
 									<thead>
 										<th>Post ID</th>
 										<th>Post Type</th>
+										<th>Date Created</th>
 										<th>Post Content</th>
 									</thead>
 									<tbody>
 										<tr class="empty-row">
-											<td colspan="3">Currently no data</td>
+											<td colspan="4">Currently no data</td>
 										</tr>
 									</tbody>
 								</table>

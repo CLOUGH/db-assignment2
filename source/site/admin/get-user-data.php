@@ -32,6 +32,7 @@ $("#user-table tbody tr").click(function(e){
 				var table_row = $("<tr>");
 				table_row.append( $("<td>").text(user_posts[i].post_id));
 				table_row.append( $("<td>").text(user_posts[i].post_type));
+				table_row.append( $("<td>").text(user_posts[i].date_created));
 				table_row.append( $("<td>").text(user_posts[i].text_body));
 				table_rows.append(table_row);
 			}
