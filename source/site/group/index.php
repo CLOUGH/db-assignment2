@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	require_once('../services/auth.php');
 	include '../header/header.php'; 
 	include '../configuration/site-header.php';

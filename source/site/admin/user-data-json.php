@@ -10,7 +10,7 @@ session_start();
 $user_id = $_GET['user_id'];
 
 //Get all post
-$posts = getAllPost($user_id);
+$posts = getAllUserPost($user_id);
 
 //Get all post
 $comments = getAllUserComment($user_id); 
@@ -18,12 +18,9 @@ $comments = getAllUserComment($user_id);
 //Get all friend of the user
 $friends = getAllFiends($user_id);
 
-$arr = array(
-	'user_id' => $_GET['user_id'], 
-	'user_posts' => $posts,
-	'user_comments' => $comments,
-	'user_friends' => $friends
-);
+$arr = array('user_posts' => $posts,'user_comments' => $comments,'user_friends' => $friends);
+
 echo json_encode($arr);
+
 
 ?>

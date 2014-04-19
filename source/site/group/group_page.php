@@ -1,5 +1,5 @@
 <?php
-	
+	session_start();
 	require_once('../services/auth.php');
 	include '../header/header.php';
 	include './group_page_info.php';

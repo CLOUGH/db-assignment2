@@ -1,7 +1,8 @@
 <?php
+	session_start();
 	include '../configuration/hash-key.php';
 	include '../configuration/config.php';
-	session_start();
+	
 
 	$group_id = $_POST['group'];
 	$title = $_POST['post_title'];

@@ -34,6 +34,7 @@ html, body {
   height: 100%;
   font-size: 15px;
 }
+
 .page-container{
 	padding-right: 20px;
 	padding-left:20px;
@@ -101,10 +102,20 @@ html, body {
 {
 	text-decoration: none;
 }
+.post div.ui.divider
+{
+	width: 97% !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
 .post .post-header .profile-pic
 {
 	float:left;
 	height:75px;
+}
+div.post-header > img
+{
+	margin-right: 10px;
 }
 .content-area
 {
@@ -120,7 +131,7 @@ html, body {
 .comment-field textarea.new-comment
 {
 	min-height: 1em;
-	width: 43em;
+	width: 84%;
 	height: 3em;
 	margin-left: 10px;
 	overflow:hidden

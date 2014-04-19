@@ -11,7 +11,9 @@ $("#user-table tbody tr").hover(
 $("#user-table tbody tr").click(function(e){
 	var row= $(e.currentTarget).find('td.user-id');
 	var userID = row[0].innerHTML;
-	$.getJSON("http://<?php echo SERVER;?>/db-assignment2/source/site/admin/user-data-json.php",{user_id: userID})
+	var url = "http://<?php echo SERVER;?>/db-assignment2/source/site/admin/user-data-json.php";
+
+	$.getJSON(url, {user_id:userID})
 	.done(function(jsonObject) {
 		console.log(jsonObject);
 

@@ -9,7 +9,7 @@ function getAllPost($user_id)
 	if($mysqli->connect_errno > 0)
 		die('Unable to connect to the database ['.$mysqli->connect_error.']');
 
-	$sql =  "SELECT post_type, fname, lname, post.post_id, date_created, image_path,text_body FROM post 
+	$sql =  "SELECT creates.user_id, post_type, fname, lname, post.post_id, date_created, image_path,text_body FROM post 
 			JOIN creates ON creates.post_id = post.post_id 
 			JOIN profile ON profile.user_id = creates.user_id
 			WHERE creates.user_id = '$user_id'
@@ -17,8 +17,10 @@ function getAllPost($user_id)
 				SELECT post.post_id FROM friend_of 
     			JOIN creates ON creates.user_id = friend_of.friend
     			JOIN post ON post.post_id  = creates.post_id
-    			WHERE friend_of.friend_owner = '3'
-    		);";
+    			WHERE friend_of.friend_owner = '$user_id'
+    		)
+			GROUP BY post.post_id DESC;";
+
 	$resultSet = $mysqli->query($sql);
 	$result= array();
 	if($resultSet!=false)
@@ -42,7 +44,8 @@ function getAllUserPost($user_id)
 	$sql =  "SELECT post_type, fname, lname, post.post_id, date_created, image_path,text_body FROM post 
 			JOIN creates ON creates.post_id = post.post_id 
 			JOIN profile ON profile.user_id = creates.user_id
-			WHERE creates.user_id = '$user_id';";
+			WHERE creates.user_id = '$user_id'
+			GROUP BY post_id DESC ;";
 	$resultSet = $mysqli->query($sql);
 	$result= array();
 	if($resultSet!=false)
@@ -90,7 +93,7 @@ function getUserProfilePic($user_id)
 		return "http://".SERVER."/db-assignment2/source/site/resources/images/profile_pics/default-user.png";
 	}
 	else{
-		return $img['profile_pic'];
+		return "http://".SERVER."/".$img['profile_pic'];
 	}
 
 }
@@ -104,7 +107,8 @@ function getAllCommentsForPost($post_id)
 
 	$sql =  "SELECT comment.comment_id, user_id, content, date_commented FROM comment 
 		JOIN comments_on ON comments_on.comment_id = comment.comment_id
-		WHERE comments_on.post_id = '$post_id'";
+		WHERE comments_on.post_id = '$post_id'
+		GROUP BY comment_id DESC";
 	$resultSet = $mysqli->query($sql);
 
 	$result= array();

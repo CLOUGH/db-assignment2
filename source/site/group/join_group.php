@@ -1,6 +1,6 @@
 <?php 
 	include '../configuration/config.php';
-	session_start();
+	
 
 	$group = $_GET['group_id'];
 	function JoinGroup($user_id,$group_id)

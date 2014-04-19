@@ -2,6 +2,7 @@
 <head>
 	<?php 
 	 session_start();
+	 require_once('../services/auth.php');
 	 include '../configuration/site-header.php';
 	 include '../configuration/config.php';
 	 include './post-functions.php';

@@ -1,8 +1,8 @@
 <?php
+	session_start();
 	include '../configuration/hash-key.php';
 	include '../configuration/config.php';
-	session_start();
-
+	
 
 	$group_name = $_POST['group_name'];
 	

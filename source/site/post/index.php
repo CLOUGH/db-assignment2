@@ -1,14 +1,11 @@
 <html>
 <head>
 	<?php 
-
-	
-	require_once('../services/auth.php');
-	
-
-	 include_once '../configuration/site-header.php';
-	 include_once '../configuration/config.php';
-	 include './post-functions.php';
+		session_start();
+		require_once('../services/auth.php');
+		include_once '../configuration/site-header.php';
+		include_once '../configuration/config.php';
+		include './post-functions.php';
 	?>
 	<title>Posts</title>
 </head>
@@ -41,14 +38,14 @@
 						<?php foreach($user_posts as $user_post): ?>
 							<div class="ui post">
 								<div class="post-header">
-									<img class="profile-pic" src="<?php echo getUserProfilePic($user_id);?>">
+									<img class="profile-pic" src="<?php echo getUserProfilePic($user_post['user_id']);?>">
 									<h3>
 										<a href="http://<?php echo SERVER; ?>/db-assignment2/source/site/profile/profile_page.php"> 
 										<?php echo $user_post['fname']." ".$user_post['lname']; ?></a>
 									</h3>
 									<p>Created: <?php echo $user_post['date_created'];?></p>
-									<hr>
 								</div>
+								<div class="ui divider"></div>
 								<?php if($user_post['image_path']!=""): ?>
 									<div class="post-image">
 										<img src="<?php echo $user_post['image_path']; ?>">

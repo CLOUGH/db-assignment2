@@ -1,7 +1,6 @@
 <html>
 <head>
-	
-	<?php 
+	<?php 	
 		require_once '../configuration/site-header.php' ;
 		require_once '../configuration/config.php';
 	?>	

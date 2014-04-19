@@ -3,9 +3,8 @@
 	<title>Home</title>
 	<?php 
 		session_start();
-		define ('APP_ROOT',substr(dirname(__FILE__),0, strrpos(dirname(__FILE__),'/',-1)));
-		include APP_ROOT.'/configuration/site-header.php';
-		include APP_ROOT.'/configuration/config.php';
+		include './configuration/site-header.php';
+		include './configuration/config.php';
 	?>	
 </head>
 <body>
@@ -46,7 +45,7 @@
 			<div class="ui grid">
 				<div class="eight wide column">
 				   <div class="ui segment">
-				   		<h1 class="ui header" align = "center"><img src="/db-assignment2/source/site/images/Graphics/Logo.png" alt = "MyBook Logo" width="459" height="145"></h1>
+				   		<h1 class="ui header" align = "center"><img src="/db-assignment2/source/site/resources/images/Graphics/Logo.png" alt = "MyBook Logo" width="459" height="145"></h1>
 				   		
 				   		<p align = "center">
 				   			<font size = "5.5" face = "calibri" >
@@ -55,7 +54,7 @@
 				   			
 				   		</p>
 				   		<br><br/>
-				   		<img src="/db-assignment2/source/site/images/Graphics/friends.jpg" alt = "Friends" width="545" height="420">
+				   		<img src="/db-assignment2/source/site/resources/images/Graphics/friends.jpg" alt = "Friends" width="545" height="420">
 				   </div>
 				</div>
 				<div class="five wide column">				   
